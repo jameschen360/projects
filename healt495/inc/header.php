@@ -181,12 +181,6 @@ mysqli_query($db, "UPDATE currency_rate SET currency='$cny_value' WHERE country=
 				<!-- header-top end -->		
 			<!-- header-container start -->
 			<div class="header-container">
-				<!-- header start -->
-				<!-- classes:  -->
-				<!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
-				<!-- "dark": dark version of header e.g. class="header dark clearfix" -->
-				<!-- "full-width": mandatory class for the full-width menu layout -->
-				<!-- "centered": mandatory class for the centered logo layout -->
 				<!-- ================ --> 
 				<header class="header fixed full-width clearfix">
 					
@@ -194,11 +188,6 @@ mysqli_query($db, "UPDATE currency_rate SET currency='$cny_value' WHERE country=
 								<!-- ================ -->
 								<div class="header-right clearfix">
 									
-								<!-- main-navigation start -->
-								<!-- classes: -->
-								<!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
-								<!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
-								<!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
 								<!-- ================ -->
 								<div class="main-navigation  animated with-dropdown-buttons">
 
