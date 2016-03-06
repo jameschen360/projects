@@ -108,10 +108,6 @@ mysqli_query($db, "UPDATE currency_rate SET currency='$cny_value' WHERE country=
 	</head>
 
 	<!-- body classes:  -->
-	<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
-	<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
-	<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
-	<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
 	<body class="no-trans">
 
 		<!-- scrollToTop -->
