@@ -1,10 +1,10 @@
 <?php
     //Change these with your information
     $paypalmode = ''; //Sandbox for testing or empty ''
-    $dbusername     = 'mmozel_miles'; //db username
-    $dbpassword     = 'camrose123'; //db password
+    $dbusername     = '***'; //db username
+    $dbpassword     = '***'; //db password
     $dbhost     = 'localhost'; //db host
-    $dbname     = 'mmozel_hart'; //db name
+    $dbname     = '***'; //db name
 
 if($_POST)
 {
@@ -120,7 +120,7 @@ if($_POST)
 			$mail->Port = 465; // or 587
 			$mail->IsHTML(true);
 			$mail->Username = "harthousewineandtapa@gmail.com";
-			$mail->Password = "tankwank";
+			$mail->Password = "****";
 			$mail->SetFrom("harthousewineandtapa@gmail.com", "Hart House Wine and Tapa");
 			$mail->Subject = "You have received a gift from $firstname $lastname!";
 			$mail->Body = $message;
@@ -154,7 +154,7 @@ if($_POST)
 			$mail_pending->Port = 465; // or 587
 			$mail_pending->IsHTML(true);
 			$mail_pending->Username = "harthousewineandtapa@gmail.com";
-			$mail_pending->Password = "tankwank";
+			$mail_pending->Password = "***";
 			$mail_pending->SetFrom("harthousewineandtapa@gmail.com", "Hart House Wine and Tapa");
 			$mail_pending->Subject = "Your gift voucher payment is being processed";
 			$mail_pending->Body = $message_pending;
