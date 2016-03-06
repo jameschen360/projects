@@ -1,0 +1,204 @@
+[11/21/2015 5:05 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=15:05:09 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=John,sdsd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AaTdsfwyIzxXT0bYzf6qwyAXcGHSAFB3Zf81jOYtUQJNUOdOFY-h8jpY, payer_email=jxchen@ualberta.ca, txn_id=70R449013J069910M, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=John,sdsd, payment_gross=, shipping=0.00, ipn_track_id=489476e5e3a86, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 6:24 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=144.46, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=16:24:53 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=4.49, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AUaxvSojqajxsiGA9qXfGuCulUctAOls8E7dzb0gq7NENyIiERKOeRCZ, payer_email=jxchen@ualberta.ca, txn_id=1S260718XT2737840, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=3f24215a92823, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 6:27 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=16:27:44 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=A9LC3Qajo-H2V8mPq4eIktgPvG2RAE1MqMgcKkD9umGmauzDyf9Bim3P, payer_email=jxchen@ualberta.ca, txn_id=51U768525E870423N, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=e7d586b8eca79, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 6:42 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=16:41:55 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=John,jxchden@jasdhj.com, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=A0asK6oiIZmtBFrRCq-Iiqf8lrk.A2pfKOUEIONhvvRDGrbJt0icDz5C, payer_email=jxchen@ualberta.ca, txn_id=14U384628L082994L, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=John,jxchden@jasdhj.com, payment_gross=, shipping=0.00, ipn_track_id=8e8c8befe729b, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 7:07 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Ineligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=17:07:50 Nov 21, 2015 PST, payment_status=Pending, charset=windows-1252, address_zip=M5A 1E1, first_name=James, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=A6Fyo.RG2CmUHAdbJ1HeGZnSj3AWAaQYZ.12Om9HSfk-m7.RX4JU-n0X, payer_email=jxchen@ualberta.ca, txn_id=9F1117628D3570613, payment_type=echeck, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, receiver_id=RZTDM4UN6AZZU, pending_reason=echeck, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=943f550bac2a1, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 7:11 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=17:11:44 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AnNMT7nRteKS2auTkxdsRz9rRvvPApU4HkYbI6R2Ou1T0hg.i7gTBGk7, payer_email=jxchen@ualberta.ca, txn_id=1PJ75873GM3153304, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=db75602c309d3, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 7:18 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=17:18:31 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=John,jxchden@jasdhj.com, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AZsMAD7lpF53UaZFve4baDUmTCMDAroxqzpaa8BjgXxcea-0QppoR8Nc, payer_email=jxchen@ualberta.ca, txn_id=8RU93293M16774024, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=John,jxchden@jasdhj.com, payment_gross=, shipping=0.00, ipn_track_id=aaf4443c17d10, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 7:45 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=154.75, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=17:45:03 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=4.79, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AgbTXNob8HdpRCh-juxF8LVsYo-IAITq4awtsEwsftArhtIhdNLhTFUc, payer_email=jxchen@ualberta.ca, txn_id=66M27786SJ2545410, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=84ca2b5d87969, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 8:45 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=18:45:28 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AeF0t8Dg4ecQGHORk2wPqKoQ2WBsAAqD7PF5I8HmZN9mVOAMmUs8PsgC, payer_email=jxchen@ualberta.ca, txn_id=3WC11375X0517731B, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=960640db90307, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 8:51 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=18:51:39 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=asd,asd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=Aduabl4yGE3Fk-S3Tof.y-7nEoTfAxL0zm39U3Dn91DoFQyW1MnU6x2D, payer_email=jxchen@ualberta.ca, txn_id=26U98334K31378134, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=asd,asd, payment_gross=, shipping=0.00, ipn_track_id=2f5ecf7fe5aa3, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 8:58 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=18:58:32 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=asdasd,asdasd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AIkKNboJiyuxWLOHUlzTd3lpqCSxAMg-BfXKTutYjsoz5evjSXIJfjaL, payer_email=jxchen@ualberta.ca, txn_id=0VY30821YG294453A, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=asdasd,asdasd, payment_gross=, shipping=0.00, ipn_track_id=6d380dc9e949, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 9:03 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=19:03:31 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=asdad,asdad, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AwD4sJJmdrzDKNGw7KMAMuZSx1AHADlRgI.m7wVEwHXLW8CvuMm2.-fe, payer_email=jxchen@ualberta.ca, txn_id=7SV134253M573222N, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=asdad,asdad, payment_gross=, shipping=0.00, ipn_track_id=8959b8b73f6b2, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 9:05 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=19:04:59 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=adad,adadad, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AKwUpvimaCAfmfJ-.PhckWeGqTcrAIWK9NJx99tgOmhhCCRBnV6ExQuu, payer_email=jxchen@ualberta.ca, txn_id=0HG75423EH442001R, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=adad,adadad, payment_gross=, shipping=0.00, ipn_track_id=c03d9519962e0, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 9:09 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=19:09:21 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=John,asdd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAh1tdhUeDB.S4gKmlCgqZVWdCugo, payer_email=jxchen@ualberta.ca, txn_id=3PL95802CY408463W, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=John,asdd, payment_gross=, shipping=0.00, ipn_track_id=8e75e4896be28, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 9:37 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=19:37:13 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=asdasd,asdasd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=An1c3DmxhDnbxSB35Zz.YM0iZn1TA6lcueqPDCF9prVtQvh4nDU8H9TI, payer_email=jxchen@ualberta.ca, txn_id=0NR66974GD728154H, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=asdasd,asdasd, payment_gross=, shipping=0.00, ipn_track_id=29fc64f117540, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/21/2015 9:57 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Eligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=19:57:24 Nov 21, 2015 PST, payment_status=Completed, charset=windows-1252, address_zip=M5A 1E1, first_name=James, mc_fee=1.80, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=asdasd,asdasd, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=Aql-DIbcuCrR4wpCdp3EMFWjdzJ2AWHL3gaywONF9MSDp4Ibf5yr6smH, payer_email=jxchen@ualberta.ca, txn_id=1HA55463SE602074E, payment_type=instant, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, payment_fee=, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=asdasd,asdasd, payment_gross=, shipping=0.00, ipn_track_id=3f9323a56bdf6, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+
+[11/22/2015 2:08 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=51.85, protection_eligibility=Ineligible, address_status=confirmed, payer_id=WKZ7X6Q4U5Q2A, tax=0.00, address_street=1 Maire-Victorin, payment_date=17:07:50 Nov 21, 2015 PST, payment_status=Denied, charset=windows-1252, address_zip=M5A 1E1, first_name=James, address_country_code=CA, address_name=James Chen, notify_version=3.8, custom=James Chen,jxchen@live.ca, payer_status=verified, business=jxch@test.com, address_country=Canada, address_city=Toronto, quantity=1, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31AakWBRM.qCj4OJ0tKyPj3nPTDa8W, payer_email=jxchen@ualberta.ca, txn_id=9F1117628D3570613, payment_type=echeck, last_name=Chen, address_state=Ontario, receiver_email=jxch@test.com, receiver_id=RZTDM4UN6AZZU, txn_type=web_accept, item_name=HHWT Gift Voucher, mc_currency=CAD, item_number=, residence_country=CA, test_ipn=1, handling_amount=0.00, transaction_subject=James Chen,jxchen@live.ca, payment_gross=, shipping=0.00, ipn_track_id=c60ed790e701f, 
+IPN Response from Paypal Server:
+ HTTP/1.0 302 Found
+Location: https://www.sandbox.paypal.com
+Server: BigIP
+Connection: close
+Content-Length: 0
+
+
+

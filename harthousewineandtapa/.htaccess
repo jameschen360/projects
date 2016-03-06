@@ -1,0 +1,23 @@
+Options -Indexes
+RewriteEngine On    # Turn on the rewriting engine\
+RewriteRule    ^/?$    index.php    [NC,L] 
+RewriteRule    ^aboutus/?$    about.php    [NC,L] 
+RewriteRule    ^news/?$    news.php    [NC,L] 
+RewriteRule    ^calendar/?$    events.php    [NC,L] 
+RewriteRule    ^gallery/?$    gallery.php    [NC,L] 
+RewriteRule    ^contactus/?$    contact.php    [NC,L] 
+RewriteRule    ^menu/?$    menu.php    [NC,L] 
+RewriteRule    ^reservation/?$    reserve.php    [NC,L] 
+RewriteRule    ^sitemap/?$    site.php    [NC,L] 
+RewriteRule    ^pagenotfound/?$    errors/404.php    [NC,L] 
+RewriteRule    ^accessdenied/?$    errors/403.php    [NC,L] 
+RewriteRule    ^giftvoucher/?$    gift.php    [NC,L]
+RewriteRule    ^payment-status/?$    txn_success.php    [NC,L] 
+RewriteRule    ^bnbguest/?$    guest.php    [NC,L] 
+RewriteRule    ^cwevents/?$    cwevents.php    [NC,L] 
+
+RewriteRule    ^admin/?$    admin/index.php    [NC,L] 
+RewriteRule    ^admin/dash?$    admin/control.php    [NC,L] 
+
+ErrorDocument 404 /pagenotfound
+ErrorDocument 403 http://harthousewineandtapa.com/accessdenied

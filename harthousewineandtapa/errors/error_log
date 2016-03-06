@@ -1,0 +1,8 @@
+[03-Jan-2016 20:09:16 America/Chicago] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 2
+[03-Jan-2016 20:09:16 America/Chicago] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 2
+[03-Jan-2016 20:09:16 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 3
+[03-Jan-2016 20:11:33 America/Chicago] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 2
+[03-Jan-2016 20:11:33 America/Chicago] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 2
+[03-Jan-2016 20:11:33 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home2/mmozel/public_html/harthousewineandtapa.com/inc/footer.php on line 3
+[14-Jan-2016 20:44:18 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home2/mmozel/public_html/harthousewineandtapa.com/inc/header.php on line 77
+[14-Jan-2016 20:44:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home2/mmozel/public_html/harthousewineandtapa.com/inc/header.php on line 77

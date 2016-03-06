@@ -1,0 +1,212 @@
+/* -------------------------------------
+								GLOBAL
+							------------------------------------- */
+							* {
+							  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+							  font-size: 100%;
+							  line-height: 1.6em;
+							  margin: 0;
+							  padding: 0;
+							}
+							img {
+							  max-width: 600px;
+							  width: 100%;
+							}
+							body {
+							  -webkit-font-smoothing: antialiased;
+							  height: 100%;
+							  -webkit-text-size-adjust: none;
+							  width: 100% !important;
+							}
+							/* -------------------------------------
+								ELEMENTS
+							------------------------------------- */
+							a {
+							  color: #BAA378;
+							}
+							.btn-primary {
+							  Margin-bottom: 10px;
+							  width: auto !important;
+							}
+							.btn-primary td {
+							  background-color: #BAA378; 
+							  border-radius: 25px;
+							  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+							  font-size: 14px; 
+							  text-align: center;
+							  vertical-align: top; 
+							}
+							.btn-primary td a {
+							  background-color: #BAA378;
+							  border: solid 1px #BAA378;
+							  border-radius: 25px;
+							  border-width: 10px 20px;
+							  display: inline-block;
+							  color: #ffffff;
+							  cursor: pointer;
+							  font-weight: bold;
+							  line-height: 2;
+							  text-decoration: none;
+							}
+							.last {
+							  margin-bottom: 0;
+							}
+							.first {
+							  margin-top: 0;
+							}
+							.padding {
+							  padding: 10px 0;
+							}
+							/* -------------------------------------
+								BODY
+							------------------------------------- */
+							table.body-wrap {
+							  padding: 20px;
+							  width: 100%;
+							}
+
+							/* -------------------------------------
+								FOOTER
+							------------------------------------- */
+							table.footer-wrap {
+							  clear: both !important;
+							  width: 100%;  
+							}
+							.footer-wrap .container p {
+							  color: #666666;
+							  font-size: 12px;
+							  
+							}
+							table.footer-wrap a {
+							  color: #999999;
+							}
+							/* -------------------------------------
+								TYPOGRAPHY
+							------------------------------------- */
+							h1, 
+							h2, 
+							h3 {
+							  color: #111111;
+							  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+							  font-weight: 200;
+							  line-height: 1.2em;
+							  margin: 40px 0 10px;
+							}
+							h1 {
+							  font-size: 36px;
+							}
+							h2 {
+							  font-size: 28px;
+							}
+							h3 {
+							  font-size: 22px;
+							}
+							p, 
+							ul, 
+							ol {
+							  font-size: 14px;
+							  font-weight: normal;
+							  margin-bottom: 10px;
+							}
+							ul li, 
+							ol li {
+							  margin-left: 5px;
+							  list-style-position: inside;
+							}
+							/* ---------------------------------------------------
+								RESPONSIVENESS
+							------------------------------------------------------ */
+							/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+							.container {
+							  clear: both !important;
+							  display: block !important;
+							  Margin: 0 auto !important;
+							  max-width: 600px !important;
+							}
+							/* Set the padding on the td rather than the div for Outlook compatibility */
+							.body-wrap .container {
+							  padding: 20px;
+							}
+							/* This should also be a block element, so that it will fill 100% of the .container */
+							.content {
+							  display: block;
+							  margin: 0 auto;
+							  max-width: 600px;
+							}
+
+							.content table {
+							  width: 100%;
+							}
+							/* The ribbons */
+
+							.corner-ribbon{
+							  width: 200px;
+							  background: #e43;
+							  position: absolute;
+							  top: 25px;
+							  left: -50px;
+							  text-align: center;
+							  line-height: 50px;
+							  letter-spacing: 1px;
+							  color: #f0f0f0;
+							  transform: rotate(-45deg);
+							  -webkit-transform: rotate(-45deg);
+							}
+
+							.box {
+							   width:100%;
+							   position:relative;
+							   border:1px solid #BAA378;
+							   background:#FFF;
+							   border-radius:5px;
+							   box-shadow: 10px 10px 5px #888888;
+
+							}
+							.ribbon {
+							   position: absolute;
+							   right: -5px; top: -5px;
+							   z-index: 1;
+							   overflow: hidden;
+							   width: 75px; height: 75px; 
+							   text-align: right;
+							}
+							.ribbon span {
+							   font-size: 13px;
+							   color: #fff; 
+							   text-transform: uppercase; 
+							   text-align: center;
+							   font-weight: bold; line-height: 20px;
+							   transform: rotate(45deg);
+							   width: 100px; display: block;
+							   background: transparent linear-gradient(#9F540B 0%, #F5AB59 100%) repeat scroll 0% 0%;
+							   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+							   position: absolute;
+							   top: 19px; right: -21px;
+							}
+							.ribbon span::before {
+							   content: '';
+							   position: absolute; 
+							   left: 0px; top: 100%;
+							   z-index: -1;
+							   border-left: 3px solid #80490E;
+							   border-right: 3px solid transparent;
+							   border-bottom: 3px solid transparent;
+							   border-top: 3px solid #80490E;
+							}
+							.ribbon span::after {
+							   content: '';
+							   position: absolute; 
+							   right: 0%; top: 100%;
+							   z-index: -1;
+							   border-right: 3px solid #80490E;
+							   border-left: 3px solid transparent;
+							   border-bottom: 3px solid transparent;
+							   border-top: 3px solid #80490E;
+							}
+							.red span {background: linear-gradient(#F70505 0%, #8F0808 100%);}
+							.red span::before {border-left-color: #8F0808; border-top-color: #8F0808;}
+							.red span::after {border-right-color: #8F0808; border-top-color: #8F0808;}
+
+							.blue span {background: linear-gradient(#2989d8 0%, #1e5799 100%);}
+							.blue span::before {border-left-color: #1e5799; border-top-color: #1e5799;}
+							.blue span::after {border-right-color: #1e5799; border-top-color: #1e5799;}
