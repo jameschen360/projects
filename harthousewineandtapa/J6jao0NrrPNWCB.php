@@ -187,7 +187,7 @@ if($_POST)
 			$mail_completed->Port = 465; // or 587
 			$mail_completed->IsHTML(true);
 			$mail_completed->Username = "harthousewineandtapa@gmail.com";
-			$mail_completed->Password = "tankwank";
+			$mail_completed->Password = "****";
 			$mail_completed->SetFrom("harthousewineandtapa@gmail.com", "Hart House Wine and Tapa");
 			$mail_completed->Subject = "Electronic gift voucher sent!";
 			$mail_completed->Body = $message_completed;
