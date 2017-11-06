@@ -1,0 +1,48 @@
+    <!-- terms & conditions modal -->
+    <div id="terms" class="remodal-bg">
+        <div class="remodal terms-modal" data-remodal-id="terms" data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+            <button data-remodal-action="close" class="remodal-close close-position" aria-label="Close"></button>
+            <div id="termsDiv">
+                <h2 style="padding-top:20px;">Terms & Conditions</h2>
+                <p>Please accept to continue</p>
+                <div class="modal-body" style="text-align:left;" class="form-control">
+                    <ul class="list-group">
+                        <li>Customer must be 18 years or older to submit an order. <hr></li>
+                        <li>Customer agrees to pay for the price of the order as per receipt plus the service fee as specified in “Service Fees” section.<hr></li>
+                        <li>There is no liquor or tobacco delivery service. <hr></li>
+                        <li>There will be no return accepted for the grocery shopping except there is a mistake by Springbankdelivery agent. <hr></li>
+                        <li>Customer is responsible to provide as detailed shopping list as possible, if there is not enough information provided the springbankdelivery agent is permitted to pick the item/items as close as possible to the item description in customer list and agent will not be responsible for any dispute. <hr></li>
+                        <li>Spribgbankdelivery is not responsible for the store products quality although Springbankdelivery agent tries to pick the best available quality items as per shopping list. <hr></li>
+                        <li>For the same day delivery all the Costco/Walmart orders shall be submitted by 12:00 pm and all other orders from Westspring shopping centre (No frills, Coop, Shoppers drug mart, Global pet food ,…) shall be submitted by 4:00 pm;Any orders submitted after this hours will be subject to the next day delivery. <hr></li>
+                        <li>All the regular service deliveries will be between 5:00 pm to 9:00 pm, there will be a 16 years old or older person available to receive the order, otherwise a desired time for delivery needs to be advised and Springbankdelivery agent try his/her best to make it happen. <hr></li>
+                        <li>Items listed in shopping list are subject to store availability.</li>
+                    </ul>
+                </div>
+                <div style="padding-bottom:20px;">
+                    <button type="button" class="btn btn-default btn-lg" data-remodal-action="close">Decline</button>
+                    <button type="button" id="acceptTerms" class="btn btn-success btn-lg">Accept</button>
+                </div>	
+            </div>
+            <div id="userInfo">
+                <h2 style="padding-top:20px;">We Need More Information!</h2>
+                <p>Please fill in the information then continue.</p>
+                <div class="paddingCheckout">
+                    <div class="input-group">
+                        <input type="text" id="editAddress" onblur="checkInput(this)" style="text-transform: uppercase;" autocomplete="off"/>
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="editPostal" onblur="checkInput(this)" style="text-transform: uppercase;" autocomplete="off"/>
+                        <label for="postal">Postal Code</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="editPhone" onblur="checkInput(this)" autocomplete="off"/>
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+            <div style="padding-bottom:20px;">
+                <button type="button" id="saveSubmitUser" class="btn btn-success btn-lg">Save & Continue</button>
+            </div>	
+            </div>
+        </div><!-- tab-content -->
+    </div> <!-- /form --> 

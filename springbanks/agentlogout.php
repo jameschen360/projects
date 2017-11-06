@@ -1,0 +1,10 @@
+<?php
+    session_start();
+    if(!empty($_SESSION['admin_user']))
+    {
+    $_SESSION['admin_user']='';
+    session_unset();
+    session_destroy();
+    }
+    header("Location:./agentlogin");
+?>

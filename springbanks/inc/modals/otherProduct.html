@@ -1,0 +1,29 @@
+<!-- Other Product Select Modal -->
+<div id="otherProductDetail" class="remodal-bg">
+    <div class="remodal product-modal-size2" data-remodal-id="otherProductDetail" data-remodal-options="hashTracking: false">
+            <button data-remodal-action="close" class="remodal-close close-position" aria-label="Close"></button>
+            <h2 class="modal-title" style="padding-top:50px;">Please Specify the Product</h2>
+            <div class="p-m" style="padding: 20px 0 20px 0;">
+                <div class="col-lg-12 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-offset-1 clearfix" style="padding-bottom:15px; margin-left:3.333%;">
+                    <div class="paddingUser">
+                        <div class="input-group">
+                            <input type="text" id="otherName" onblur="checkInput(this)" class="onNewModalClear"/>
+                            <label for="otherName" class="">Product Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="otherDescription" onblur="checkInput(this)" class="onNewModalClear"/>
+                            <label for="description" class="">Brand & Description</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="otherAmount" onblur="checkInput(this)" class="onNewModalClear" pattern="\d*"/>
+                            <label for="amount" class="">Amount</label>
+                        </div>
+                    </div>                   
+                </div>
+                    
+            </div>
+            <div style="padding-bottom:25px;">
+                    <button type="button" id="addToCartOther" class="btn btn-warning btn-lg">Confirm</button>
+            </div>
+    </div><!-- tab-content -->
+</div> <!-- /form --> 

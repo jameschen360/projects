@@ -1,0 +1,54 @@
+<div class="p-m userSettings">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <a style="cursor: pointer; margin-left: -17px;" class="right-sidebar-toggle sidebar-button m-b-md userInfoClose"><i class="fa fa-close fa-2x"></i></a>
+    </div>
+    <div class="paddingUser row">
+        <div style="text-align:center;">
+            <span class="text-primary col-lg-10 col-md-10 col-sm-10 col-xs-10 sidebar-title-user-setting">
+                <h1><strong>Settings</strong> </h1>
+            </span>
+            <p class="userInfoTitle"></p>
+        </div>
+
+        
+        <div class="input-group user-settings-input-group">
+            <input type="text" id="address" onblur="checkInput(this)" class="isFocus" style="text-transform: uppercase;" autocomplete="off"/>
+            <label for="address">Address</label>
+        </div>
+        <div class="input-group user-settings-input-group">
+            <input type="text" id="postal" onblur="checkInput(this)" class="isFocus" style="text-transform: uppercase;" autocomplete="off"/>
+            <label for="postal">Postal Code</label>
+        </div>
+        <div class="input-group user-settings-input-group">
+            <input type="text" id="phone" onblur="checkInput(this)" class="isFocus" autocomplete="off"/>
+            <label for="phone">Phone</label>
+        </div>
+        <div class="pull=left" style="text-align:center;">
+            <button id="userInfoSave" class="btn btn-primary">Save Information</button>    
+        </div>
+    </div>
+    <div class="row" style="text-align:center; padding:80px 0px 0px 0px;">
+        <span class="text-primary">
+            <div class="row">
+                <strong><h4>Update Password</h4></strong>
+            </div>
+        </span>
+    </div>
+    <div class="paddingUser row">
+        <div class="input-group user-settings-input-group">
+            <input type="password" id="passwordCurrent" onblur="checkInput(this)" />
+            <label for="passwordCurrent">Current Password</label>
+        </div>
+        <div class="input-group user-settings-input-group">
+            <input type="password" id="password1" onblur="checkInput(this)" />
+            <label for="password1">New Password</label>
+        </div>
+        <div class="input-group user-settings-input-group">
+            <input type="password" id="password2" onblur="checkInput(this)" />
+            <label for="password2">Repeat New Password</label>
+        </div>
+        <div class="pull=left" style="text-align:center;">
+            <button id="userPasswordSave" class="btn btn-primary">Update Password</button>    
+        </div>
+    </div>                        
+</div>

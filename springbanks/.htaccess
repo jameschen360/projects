@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On    # Turn on the rewriting engine\
+RewriteRule    ^/?$    index.php    [NC,L] 
+RewriteRule    ^sblogin/?$    sblogin.php    [NC,L] 
+RewriteRule    ^sblogout/?$    sblogout.php    [NC,L] 
+RewriteRule    ^agentlogin/?$    agentLogin.php    [NC,L] 
+RewriteRule    ^agent/?$    agentIndex.php    [NC,L] 
+RewriteRule    ^agentlogout/?$    agentlogout.php    [NC,L] 

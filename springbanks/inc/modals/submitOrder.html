@@ -1,0 +1,59 @@
+<!-- submit order modal -->
+<div id="submitOrderModal" class="remodal-bg">
+    <div class="remodal submitOrder-modal" data-remodal-id="submitOrderModal" data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
+        <div class="modal-body">
+            <div id="orderConfirm">
+                <h2 class="modal-title">Review Your Order!</h2>
+                <div class="row review-order-type">
+                    <span style="padding-bottom:25px;" id="deliveryTypeSubmit"></span>
+                    <span style="padding-bottom:25px;" id="storeNameSubmit"></span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">             
+                        <div class="table-responsive m-t">
+                            <table class="table table-hover" id="cartReview">
+                                <thead>
+                                    <tr>
+                                        <th class="col-sm-6"><h3>Item</h3></th>
+                                        <th class="col-sm-2"><h3>Amount</h3></th>
+                                        <th class="col-sm-4"><h3>Unit</h3></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+                                </tbody>
+        
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="padding-bottom:36px;">
+                    <h3>Your order will be delivered to the following address:</h3>
+                    <h4>
+                        <p class="reviewAddress"></p>
+                    </h4>
+                </div>
+                <div style="padding-bottom:20px;">
+                    <button type="button" class="btn btn-default btn-lg" data-remodal-action="close">Not Yet</button>
+                    <button type="button" id="submitOrderFinal" class="btn btn-warning btn-lg">Submit Now!</button>
+                </div>
+            </div>
+            <div id="orderSuccess">
+                <h2 class="modal-title">Order has been submitted!</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-12">           
+                        <p>You have successfully submitted your order. Please allow our agents to recieve and review the order. In the mean time</p>
+                        <p>To view your order, please click on <strong>"Continue"</strong> and make a new shopping list. And then click on Previous Order too see the past order list!</p>  
+                        
+                    </div>
+                </div>
+                <hr>
+                <div style="padding-bottom:20px;">
+                    <button type="button" id="buttonRefresh" class="btn btn-warning btn-lg">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- tab-content -->
+</div> <!-- /form -->

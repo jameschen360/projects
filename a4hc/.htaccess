@@ -1,0 +1,17 @@
+Options -Indexes
+RewriteEngine On    # Turn on the rewriting engine\
+RewriteRule    ^/?$    index.php    [NC,L] 
+RewriteRule    ^accounting/?$    accounting_code.php    [NC,L] 
+RewriteRule    ^logout/?$    logout.php    [NC,L] 
+RewriteRule    ^employees/?$    employees.php    [NC,L] 
+RewriteRule    ^projects/?$    projects.php    [NC,L] 
+RewriteRule    ^payees/?$    payees.php    [NC,L] 
+RewriteRule    ^vacationapproval/?$    vacation_approval.php    [NC,L] 
+RewriteRule    ^overtimeapproval/?$    overtime_approval.php    [NC,L] 
+RewriteRule    ^mytimesheet/?$    timesheet.php    [NC,L] 
+RewriteRule    ^timesheetapproval/?$    timesheet_approval.php    [NC,L] 
+RewriteRule    ^myvacation/?$    vacation_request.php    [NC,L] 
+RewriteRule    ^myovertime/?$    overtime_request.php    [NC,L] 
+RewriteRule    ^expenseclaim/?$    expense_claim.php    [NC,L] 
+RewriteRule    ^expenseapproval/?$    expense_approval.php    [NC,L] 
+RewriteRule    ^login/?$    login.php    [NC,L] 
