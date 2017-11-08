@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
 
@@ -14,6 +14,7 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
   responseData: any;
+  returnUrl: string;
   loginData = {
     'username': '',
     'password': ''
@@ -21,10 +22,14 @@ export class LoginComponent implements OnInit {
 
   errorLoginMsg = false;
 
+  authenticated = false;
+
   constructor(private authService: AuthService,
-              private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+
   }
 
   onSignin(form: NgForm) {
@@ -36,12 +41,8 @@ export class LoginComponent implements OnInit {
         this.responseData = result;
         if (this.responseData.userData === false) {
           this.errorLoginMsg = true;
-          $('#signInButton').html('Sign In');
         } else {
-          // user is signed in
-          this.router.navigate(['/dashboard']);
           this.errorLoginMsg = false;
-          localStorage.setItem('userData', JSON.stringify(this.responseData));
         }
       }, (err) => {
       });
@@ -55,3 +56,5 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+

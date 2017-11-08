@@ -11,7 +11,7 @@
                     <div class="panel-body">
                         <div id="loginErrorMsg"></div>
                         <form id="loginForm" (ngSubmit)="onSignin(f)" #f="ngForm">
-                            <span class="help-block text-center" *ngIf="errorLoginMsg">Please enter a valid Username</span>
+                            <span class="help-block text-center" *ngIf="errorLoginMsg">Please enter a valid credentials</span>
                             <div class="form-group">
                                 <label class="control-label" for="username" style="padding: 0px;">Username</label>
                                 <input type="email" placeholder="Username"  required="" name="username" id="username" ngModel class="form-control" autocomplete="off">
