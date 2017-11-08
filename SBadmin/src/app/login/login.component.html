@@ -1,0 +1,30 @@
+<body class="blank">
+    <div class="color-line"></div>
+    <div class="login-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center m-b-md">
+                    <h3>SPRING BANK DELIVERY SERVICES</h3>
+                    <small>Agents Login</small>
+                </div>
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div id="loginErrorMsg"></div>
+                        <form id="loginForm" (ngSubmit)="onSignin(f)" #f="ngForm">
+                            <span class="help-block text-center" *ngIf="errorLoginMsg">Please enter a valid Username</span>
+                            <div class="form-group">
+                                <label class="control-label" for="username" style="padding: 0px;">Username</label>
+                                <input type="email" placeholder="Username"  required="" name="username" id="username" ngModel class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password" style="padding: 0px;">Password</label>
+                                <input type="password" placeholder="*********" required="" name="password" id="password" ngModel class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-warning btn-block" [disabled]="!f.valid" (click)="loaderAnimate()" id="signInButton">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
