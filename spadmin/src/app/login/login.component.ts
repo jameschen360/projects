@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
         this.responseData = result;
         if (this.responseData.userData === false) {
           this.errorLoginMsg = true;
-          console.log(this.responseData);
         } else {
           this.errorLoginMsg = false;
         }

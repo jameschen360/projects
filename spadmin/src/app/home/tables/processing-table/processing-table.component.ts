@@ -17,6 +17,7 @@ export class ProcessingTableComponent implements OnInit {
     'id': '',
     'token': ''
   };
+  processingOrderBusy: Promise<any>;
 
   constructor(public getData: ContentService) {
     const data = JSON.parse(localStorage.getItem('userData'));
@@ -32,7 +33,7 @@ export class ProcessingTableComponent implements OnInit {
   }
 
   getProcessingTable () {
-    this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
+   this.processingOrderBusy = this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
       this.responseData = result;
       $(function (){
         $('#processingTable').DataTable({

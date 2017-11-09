@@ -4,3 +4,62 @@
 /deep/ table.dataTable.no-footer {
   border-bottom: 1px solid #BBBBBB;
 }
+
+/deep/ .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #F3B136;
+  border-color: #F3B136;
+}
+
+/deep/ .dataTables_wrapper .dataTables_paginate .paginate_button {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0px;
+  margin-left: 0px;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  color: #333 !important;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+/deep/ .pagination>.active>a, .pagination>.active>a:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #F0A721 !important;
+  border-color: #F0A721 !important;
+}
+
+/deep/ .mat-warn {
+  background-color: #F0A721 !important;
+}
+
+.icon-style-edit {
+  padding-left:3px;
+  margin-top:2px;
+}
+
+.icon-style-check {
+  padding-left:3px;
+  margin-top:-1px;
+}
+
+.icon-style-user {
+  padding-left:3px;
+  margin-top:-1px;
+}
+
+.icon-style-gear {
+  padding-left:3px;
+  margin-top:-1px;
+}
+
+.icon-style-product {
+  padding-left:3px;
+  margin-top:-1px;
+}

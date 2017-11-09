@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule,
             MatCheckboxModule,
             MatTabsModule,
@@ -8,7 +7,6 @@ import { MatButtonModule,
 
 @NgModule({
     imports: [
-        BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
         MatTabsModule,
@@ -16,7 +14,6 @@ import { MatButtonModule,
 
     ],
     exports: [
-        BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
         MatTabsModule,
