@@ -6,25 +6,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { AuthLogout } from './auth/auth-logout';
 import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
 import { AuthService } from './auth/auth.service';
+import { ContentService } from './getData/content.service';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { ProcessingTableComponent } from './home/tables/processing-table/processing-table.component';
 import { TablesComponent } from './home/tables/tables.component';
 import { LoginComponent } from './login/login.component';
 import { MatMaterialModule } from './mat-material.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ProcessOrderComponent } from './process-order/process-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProcessOrderComponent,
     LoginComponent,
     HomeComponent,
     NotFoundComponent,
     TablesComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProcessingTableComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,9 @@ import { ProcessOrderComponent } from './process-order/process-order.component';
   providers: [
     AuthService,
     AuthGuard,
-    AuthPreventLoginPage
+    AuthPreventLoginPage,
+    AuthLogout,
+    ContentService
   ],
   bootstrap: [AppComponent]
 })

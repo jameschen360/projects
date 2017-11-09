@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthLogout } from '../../auth/auth-logout';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authLogout: AuthLogout) { }
 
   ngOnInit() {
+  }
+
+  onLogoutClick() {
+    this.authLogout.onLogout();
   }
 
 }

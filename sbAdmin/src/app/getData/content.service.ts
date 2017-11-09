@@ -8,11 +8,9 @@ declare var jquery: any;
 declare var $: any;
 
 @Injectable()
-export class AuthService {
-  token: string;
+export class ContentService {
   responseData;
-  errorLoginMsg = false;
-  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/login/';
+  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/getData/';
 
   constructor(public http: Http,
               public router: Router) { }
@@ -23,18 +21,6 @@ export class AuthService {
         .subscribe(res => {
           resolve(res.json());
           this.responseData = res.json();
-          this.token = res.json().token;
-          localStorage.clear();
-          if (this.token != null) {
-            this.errorLoginMsg = false;
-            this.router.navigate(['/dashboard']);
-            localStorage.setItem('userData', JSON.stringify(res.json()));
-            localStorage.setItem('token', this.token);
-          } else {
-            this.errorLoginMsg = true;
-            $('#signInButton').html('Sign In');
-          }
-          return this.token;
         }, (err) => {
           reject(err);
         });
