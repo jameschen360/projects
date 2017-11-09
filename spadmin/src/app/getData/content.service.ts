@@ -9,7 +9,6 @@ declare var $: any;
 
 @Injectable()
 export class ContentService {
-  responseData;
   loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/getData/';
 
   constructor(public http: Http,
@@ -19,8 +18,7 @@ export class ContentService {
       const headers = new Headers();
       this.http.post(this.loginAPIURI + type, JSON.stringify(credentials), { headers: headers })
         .subscribe(res => {
-          resolve(res.json());
-          this.responseData = res.json();
+          resolve(res.json().processingOrderData);
         }, (err) => {
           reject(err);
         });

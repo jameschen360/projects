@@ -1,3 +1,6 @@
 /deep/ .mat-ink-bar {
   background-color: #F3B136 !important;
 }
+/deep/ table.dataTable.no-footer {
+  border-bottom: 1px solid #BBBBBB;
+}
