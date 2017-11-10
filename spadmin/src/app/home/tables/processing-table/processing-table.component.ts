@@ -4,7 +4,7 @@ import { ProcessingTableService } from '../../../server/processing-table.service
 
 import { ProcessingModalComponent } from './processing-modal/processing-modal.component';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 declare var $: any;
 
@@ -24,8 +24,6 @@ export class ProcessingTableComponent implements OnInit {
   };
   processingOrderBusy: Promise<any>;
   order;
-  options = {
-  };
 
   constructor(public getData: ProcessingTableService, public dialog: MatDialog) {
     const data = JSON.parse(localStorage.getItem('userData'));
@@ -40,10 +38,10 @@ export class ProcessingTableComponent implements OnInit {
 
   }
 
-  getProcessingTable () {
-   this.processingOrderBusy = this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
+  getProcessingTable() {
+    this.processingOrderBusy = this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
       this.responseData = result;
-      $(function (){
+      $(function () {
         $('#processingTable').DataTable({
           responsive: true
         });
