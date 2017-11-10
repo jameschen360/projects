@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,14 +11,15 @@ import { AuthLogout } from './auth/auth-logout';
 import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
 import { AuthService } from './auth/auth.service';
 import { BusyLoaderModule } from './busy-loader.module';
+import { MaterialModule } from './material.module';
 import { ContentService } from './getData/content.service';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProcessingTableComponent } from './home/tables/processing-table/processing-table.component';
 import { TablesComponent } from './home/tables/tables.component';
 import { LoginComponent } from './login/login.component';
-import { MatMaterialModule } from './mat-material.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProcessingModalComponent } from './home/tables/processing-table/processing-modal/processing-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +29,21 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent,
     TablesComponent,
     HeaderComponent,
-    ProcessingTableComponent
+    ProcessingTableComponent,
+    ProcessingModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MatMaterialModule,
     BusyLoaderModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MaterialModule
+  ],
+  entryComponents: [
+    ProcessingModalComponent
   ],
   providers: [
     AuthService,

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+
 import { ContentService } from '../../../getData/content.service';
+
+import { ProcessingModalComponent } from './processing-modal/processing-modal.component';
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 declare var $: any;
 
@@ -18,8 +23,11 @@ export class ProcessingTableComponent implements OnInit {
     'token': ''
   };
   processingOrderBusy: Promise<any>;
+  order;
+  options = {
+  };
 
-  constructor(public getData: ContentService) {
+  constructor(public getData: ContentService, public dialog: MatDialog) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
     this.token = data.token;
@@ -44,8 +52,19 @@ export class ProcessingTableComponent implements OnInit {
     });
   }
 
-  viewProcessingModal(event) {
-    console.log(event.target.id);
-  }
+  viewProcessingModal(orderIDHTML) {
+    this.order = orderIDHTML.innerHTML;
+    console.log(this.order);
+    const dialogRef = this.dialog.open(ProcessingModalComponent, {
+      width: '100%',
+      data: { orderID: this.order }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+
+  }
 }
+

@@ -1,21 +1,21 @@
-
 <div class="panel-body table-responsive table-panel">
     <div [ngBusy]="processingOrderBusy">
         <table id="processingTable" class="table table-striped table-bordered table-hover">
             <thead>
-            <tr>
-                <th>OrderID</th>
-                <th>Order Date</th>
-                <th>Status</th>
-                <th>View</th>
-            </tr>
+                <tr>
+                    <th>OrderID</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>View</th>
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let order of responseData">
-                    <td>{{ order.id }}</td>
+                    <td #orderID>{{ order.id }}</td>
                     <td>{{ order.order_time }}</td>
                     <td>{{ order.status }}</td>
-                    <td><button mat-raised-button color="warn" (click)="viewProcessingModal($event)" id={{order.id}}>View</button></td>
+                    <td><button mat-raised-button color="warn" (click)="viewProcessingModal(orderID)">View</button></td>
+                    
                 </tr>
             </tbody>
         </table>

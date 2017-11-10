@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 import { AuthService } from '../auth/auth.service';
 
@@ -54,7 +55,6 @@ export class LoginComponent implements OnInit {
   loaderAnimate() {
     $('#signInButton').html('<span class=\'glyphicon glyphicon-refresh glyphicon-refresh-animate\'></span> Authenticating...');
   }
-
 }
 
 
