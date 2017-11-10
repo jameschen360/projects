@@ -8,7 +8,7 @@ declare var jquery: any;
 declare var $: any;
 
 @Injectable()
-export class AuthService {
+export class LoginService {
   token: string;
   responseData;
   errorLoginMsg = false;

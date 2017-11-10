@@ -8,8 +8,8 @@ declare var jquery: any;
 declare var $: any;
 
 @Injectable()
-export class ContentService {
-  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/getData/';
+export class ProcessingTableService {
+  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/processing/';
 
   constructor(public http: Http,
               public router: Router) { }

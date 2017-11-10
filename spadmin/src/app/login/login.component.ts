@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
-import { AuthService } from '../auth/auth.service';
+import { LoginService } from '../server/login.service';
 
 declare var jquery: any;
 declare var $: any;
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   authenticated = false;
 
-  constructor(private authService: AuthService,
+  constructor(private authService: LoginService,
     private router: Router,
     private route: ActivatedRoute) { }
 

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
-import { AuthService } from './auth.service';
+import { LoginService } from '../server/login.service';
 
 
 
 @Injectable()
 export class AuthPreventLoginPage implements CanActivate {
 
-    constructor (private authService: AuthService,
+    constructor (private authService: LoginService,
                  private router: Router) {
 
     }

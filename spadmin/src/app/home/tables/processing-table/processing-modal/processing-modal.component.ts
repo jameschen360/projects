@@ -8,7 +8,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./processing-modal.component.css']
 })
 export class ProcessingModalComponent implements OnInit {
-
   constructor(
     public dialogRef: MatDialogRef<ProcessingModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -18,6 +17,7 @@ export class ProcessingModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.data.orderID);
   }
 
 

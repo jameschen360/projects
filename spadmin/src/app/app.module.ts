@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthLogout } from './auth/auth-logout';
 import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
-import { AuthService } from './auth/auth.service';
+import { LoginService } from './server/login.service';
 import { BusyLoaderModule } from './busy-loader.module';
 import { MaterialModule } from './material.module';
-import { ContentService } from './getData/content.service';
+import { ProcessingTableService } from './server/processing-table.service';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProcessingTableComponent } from './home/tables/processing-table/processing-table.component';
@@ -46,11 +46,11 @@ import { ProcessingModalComponent } from './home/tables/processing-table/process
     ProcessingModalComponent
   ],
   providers: [
-    AuthService,
+    LoginService,
     AuthGuard,
     AuthPreventLoginPage,
     AuthLogout,
-    ContentService
+    ProcessingTableService
   ],
   bootstrap: [AppComponent]
 })
