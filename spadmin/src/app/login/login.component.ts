@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: LoginService,
     private router: Router,
     private route: ActivatedRoute) {
-      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
     }
 
   ngOnInit() {
@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           this.errorLoginMsg = true;
         } else {
           this.errorLoginMsg = false;
+          console.log(this.returnUrl)
           this.router.navigateByUrl(this.returnUrl);
         }
       }, (err) => {
