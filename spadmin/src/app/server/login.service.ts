@@ -1,4 +1,4 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { Injectable } from '@angular/core';
@@ -15,8 +15,7 @@ export class LoginService {
   loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/login/';
   returnUrl: string;
   constructor(public http: Http,
-              public router: Router,
-              public route: ActivatedRoute,
+              public router: Router
             ) {
 
             }
