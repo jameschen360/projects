@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { Injectable } from '@angular/core';
@@ -13,9 +13,13 @@ export class LoginService {
   responseData;
   errorLoginMsg = false;
   loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/login/';
-
+  returnUrl: string;
   constructor(public http: Http,
-              public router: Router) { }
+              public router: Router,
+              public route: ActivatedRoute,
+            ) {
+
+            }
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       const headers = new Headers();
@@ -27,7 +31,6 @@ export class LoginService {
           localStorage.clear();
           if (this.token != null) {
             this.errorLoginMsg = false;
-            this.router.navigate(['/dashboard']);
             localStorage.setItem('userData', JSON.stringify(res.json()));
             localStorage.setItem('token', this.token);
           } else {

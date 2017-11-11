@@ -20,6 +20,10 @@ import { TablesComponent } from './home/tables/tables.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProcessingModalComponent } from './home/tables/processing-table/processing-modal/processing-modal.component';
+import { DeliveredTableComponent } from './home/tables/delivered-table/delivered-table.component';
+import { UserTableComponent } from './home/tables/user-table/user-table.component';
+import { MaitTableComponent } from './home/tables/mait-table/mait-table.component';
+import { ProductTableComponent } from './home/tables/product-table/product-table.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { ProcessingModalComponent } from './home/tables/processing-table/process
     TablesComponent,
     HeaderComponent,
     ProcessingTableComponent,
-    ProcessingModalComponent
+    ProcessingModalComponent,
+    DeliveredTableComponent,
+    UserTableComponent,
+    MaitTableComponent,
+    ProductTableComponent
   ],
   imports: [
     BrowserModule,
