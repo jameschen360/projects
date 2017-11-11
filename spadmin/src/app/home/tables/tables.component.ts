@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
-import { PlatformLocation } from '@angular/common';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class TablesComponent implements OnInit {
   routeLinks: any[];
   activeLinkIndex = 0;
 
-  constructor(private router: Router, private route: ActivatedRoute, location: PlatformLocation) {
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location) {
     this.routeLinks = [
       { label: 'Processing Orders', link: 'processingTable', icon: 'fa-edit', cssStyle: 'icon-style-edit' },
       { label: 'Delivered Orders', link: 'deliveredTable', icon: 'fa-check', cssStyle: 'icon-style-check' },
@@ -32,24 +32,21 @@ export class TablesComponent implements OnInit {
     } else if (router.url === '/dashboard/productTable') {
       this.activeLinkIndex = 4;
     }
+  }
 
-    location.onPopState(() => {
-      console.log(this.activeLinkIndex);
-      if (router.url === '/dashboard/processingTable') {
+  ngOnInit() {
+    this.location.subscribe(currentLocation => {
+      if (currentLocation.url === '/dashboard/processingTable') {
         this.activeLinkIndex = 0;
-      } else if (router.url === '/dashboard/deliveredTable') {
+      } else if (currentLocation.url === '/dashboard/deliveredTable') {
         this.activeLinkIndex = 1;
-      } else if (router.url === '/dashboard/userTable') {
+      } else if (currentLocation.url === '/dashboard/userTable') {
         this.activeLinkIndex = 2;
-      } else if (router.url === '/dashboard/maitTable') {
+      } else if (currentLocation.url === '/dashboard/maitTable') {
         this.activeLinkIndex = 3;
-      } else if (router.url === '/dashboard/productTable') {
+      } else if (currentLocation.url === '/dashboard/productTable') {
         this.activeLinkIndex = 4;
       }
     });
   }
-
-  ngOnInit() {
-  }
-
 }
