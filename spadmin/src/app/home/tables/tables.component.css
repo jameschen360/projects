@@ -2,7 +2,7 @@
   background-color: #F3B136 !important;
 }
 /deep/ table.dataTable.no-footer {
-  border-bottom: 1px solid #BBBBBB;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 /deep/ .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
@@ -37,6 +37,16 @@
 
 /deep/ .mat-warn {
   background-color: #F0A721 !important;
+}
+
+@media screen and (max-width: 767px) {
+  /deep/ .table-responsive {
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      border: 1px solid #FFFFFF;
+  }
 }
 
 .icon-style-edit {

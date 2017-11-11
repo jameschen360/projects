@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: LoginService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
 
   ngOnInit() {
-
   }
 
   onSignin(form: NgForm) {
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
           this.errorLoginMsg = true;
         } else {
           this.errorLoginMsg = false;
+          this.router.navigateByUrl(this.returnUrl);
         }
       }, (err) => {
       });
