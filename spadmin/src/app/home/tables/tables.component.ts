@@ -32,9 +32,13 @@ export class TablesComponent implements OnInit {
     } else if (router.url === '/dashboard/productTable') {
       this.activeLinkIndex = 4;
     }
+<<<<<<< HEAD
 
     //This a very unique line of comment
     
+=======
+    // mah niggah
+>>>>>>> fa6cc006bbfc50f14f504f7de6fc42a22290170a
   }
 
   ngOnInit() {
