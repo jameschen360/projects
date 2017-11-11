@@ -9,21 +9,22 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthLogout } from './auth/auth-logout';
 import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
-import { LoginService } from './server/login.service';
 import { BusyLoaderModule } from './busy-loader.module';
-import { MaterialModule } from './material.module';
-import { ProcessingTableService } from './server/processing-table.service';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ProcessingTableComponent } from './home/tables/processing-table/processing-table.component';
-import { TablesComponent } from './home/tables/tables.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ProcessingModalComponent } from './home/tables/processing-table/processing-modal/processing-modal.component';
 import { DeliveredTableComponent } from './home/tables/delivered-table/delivered-table.component';
-import { UserTableComponent } from './home/tables/user-table/user-table.component';
 import { MaitTableComponent } from './home/tables/mait-table/mait-table.component';
+import { ProcessingModalComponent } from './home/tables/processing-table/processing-modal/processing-modal.component';
+import { ProcessingTableComponent } from './home/tables/processing-table/processing-table.component';
 import { ProductTableComponent } from './home/tables/product-table/product-table.component';
+import { TablesComponent } from './home/tables/tables.component';
+import { UserTableComponent } from './home/tables/user-table/user-table.component';
+import { LoginComponent } from './login/login.component';
+import { MaterialModule } from './material.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginService } from './server/login.service';
+import { ProcessingModalService } from './server/processing-table/processing-modal.service';
+import { ProcessingTableService } from './server/processing-table/processing-table.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ProductTableComponent } from './home/tables/product-table/product-table
     AuthGuard,
     AuthPreventLoginPage,
     AuthLogout,
-    ProcessingTableService
+    ProcessingTableService,
+    ProcessingModalService
   ],
   bootstrap: [AppComponent]
 })

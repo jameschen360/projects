@@ -4,11 +4,8 @@ import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-declare var jquery: any;
-declare var $: any;
-
 @Injectable()
-export class ProcessingTableService {
+export class ProcessingModalService {
   loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/processing/';
 
   constructor(public http: Http,
@@ -18,7 +15,7 @@ export class ProcessingTableService {
       const headers = new Headers();
       this.http.post(this.loginAPIURI + type, JSON.stringify(credentials), { headers: headers })
         .subscribe(res => {
-          resolve(res.json().processingOrderData);
+          resolve(res.json());
         }, (err) => {
           reject(err);
         });

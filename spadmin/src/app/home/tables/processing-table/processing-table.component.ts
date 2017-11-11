@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { ProcessingTableService } from '../../../server/processing-table.service';
+import { ProcessingTableService } from '../../../server/processing-table/processing-table.service';
 
 import { ProcessingModalComponent } from './processing-modal/processing-modal.component';
 

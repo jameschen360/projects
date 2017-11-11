@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
           this.errorLoginMsg = true;
         } else {
           this.errorLoginMsg = false;
-          console.log(this.returnUrl)
           this.router.navigateByUrl(this.returnUrl);
         }
       }, (err) => {
