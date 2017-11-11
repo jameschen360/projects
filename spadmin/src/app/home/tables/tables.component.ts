@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 export class TablesComponent implements OnInit {
   routeLinks: any[];
   activeLinkIndex = 0;
+  selectedIndex = 0;
 
   constructor(private router: Router, private route: ActivatedRoute, private location: Location) {
     this.routeLinks = [
@@ -22,31 +23,55 @@ export class TablesComponent implements OnInit {
     ];
 
     if (router.url === '/dashboard/processingTable') {
-      this.activeLinkIndex = 0;
+      this.selectedIndex = 0;
     } else if (router.url === '/dashboard/deliveredTable') {
-      this.activeLinkIndex = 1;
+      this.selectedIndex = 1;
     } else if (router.url === '/dashboard/userTable') {
-      this.activeLinkIndex = 2;
+      this.selectedIndex = 2;
     } else if (router.url === '/dashboard/maitTable') {
-      this.activeLinkIndex = 3;
+      this.selectedIndex = 3;
     } else if (router.url === '/dashboard/productTable') {
-      this.activeLinkIndex = 4;
+      this.selectedIndex = 4;
     }
   }
 
   ngOnInit() {
     this.location.subscribe(currentLocation => {
       if (currentLocation.url === '/dashboard/processingTable') {
-        this.activeLinkIndex = 0;
+        this.selectedIndex = 0;
       } else if (currentLocation.url === '/dashboard/deliveredTable') {
-        this.activeLinkIndex = 1;
+        this.selectedIndex = 1;
       } else if (currentLocation.url === '/dashboard/userTable') {
-        this.activeLinkIndex = 2;
+        this.selectedIndex = 2;
       } else if (currentLocation.url === '/dashboard/maitTable') {
-        this.activeLinkIndex = 3;
+        this.selectedIndex = 3;
       } else if (currentLocation.url === '/dashboard/productTable') {
-        this.activeLinkIndex = 4;
+        this.selectedIndex = 4;
       }
     });
+  }
+
+  changeTab(e) {
+    switch (e.index) {
+    case 0:
+        this.router.navigateByUrl('/dashboard/processingTable');
+        break;
+    case 1:
+        this.router.navigateByUrl('/dashboard/deliveredTable');
+        break;
+    case 2:
+        this.router.navigateByUrl('/dashboard/userTable');
+        break;
+    case 3:
+        this.router.navigateByUrl('/dashboard/maitTable');
+        break;
+    case 4:
+        this.router.navigateByUrl('/dashboard/productTable');
+        break;
+    }
+  }
+  
+  selectNextTab() {
+    this.selectedIndex++;
   }
 }
