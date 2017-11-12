@@ -22,72 +22,81 @@
                         <span style="padding-bottom:25px;" id="storeName"><h4 class="col-sm-4" style="text-align:center;">Store: {{ store | uppercase }}</h4></span>
 
                     </div>
+                    <form (ngSubmit)="markDelivered(f)" #f="ngForm">
+                        <div class="table-responsive m-t">
 
-                    <div class="table-responsive m-t">
-                        <table class="table table-striped" id="processingOrderTableDetail">
-                            <thead>
-                                <tr>
-                                    <th>Item List</th>
-                                    <th>Quantity</th>
-                                    <th>Unit</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr id="cart_{{ cartInfo.id }} " class="cartItem" *ngFor="let cartInfo of cartInfos; let i = index">
-                                    <td class="col-sm-8 col-md-6">
-                                        <div class="media-body" *ngIf="cartInfo.isCustom=='0'">
-                                            <h4 class="media-heading pull-left">{{ productInfos[i].product_name }}</h4>
-                                        </div>
-                                        <div class="media-body" *ngIf="cartInfo.isCustom=='1'">
-                                            <h4 class="media-heading pull-left">{{ cartInfo.item_id }}</h4>
-                                        </div>
-                                        <div style="text-align: left;">
-                                            <p class="media-heading">{{ cartInfo.description }}</p>
-                                        </div>
-                                    </td>
-                                    <td class="col-sm-1 col-md-1" style="text-align: center">
-                                        <input type="number" class="form-control editAmount" value="{{cartInfo.amount}}" pattern="\\d*" />
+                            <table class="table table-striped" id="processingOrderTableDetail">
+                                <thead>
+                                    <tr>
+                                        <th>Item List</th>
+                                        <th>Quantity</th>
+                                        <th>Unit</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="cart_{{ cartInfo.id }} " class="cartItem" *ngFor="let cartInfo of cartInfos; let i = index">
+                                        <td class="col-sm-8 col-md-6">
+                                            <div class="media-body" *ngIf="cartInfo.isCustom=='0'">
+                                                <h4 class="media-heading pull-left">{{ productInfos[i].product_name }}</h4>
+                                            </div>
+                                            <div class="media-body" *ngIf="cartInfo.isCustom=='1'">
+                                                <h4 class="media-heading pull-left">{{ cartInfo.item_id }}</h4>
+                                            </div>
+                                            <div style="text-align: left;">
+                                                <p class="media-heading">{{ cartInfo.description }}</p>
+                                            </div>
+                                        </td>
+                                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                                            <mat-form-field>
+                                                <input type="number" matInput placeholder="" value="{{cartInfo.amount}}">
+                                            </mat-form-field>
+                                        </td>
 
-                                    </td>
+                                        <td class="col-sm-1 col-md-1" style="text-align: left" *ngIf="cartInfo.isCustomUnit=='' ; customUnit">
+                                            <span>{{ productInfos[i].unit }}</span>
+                                        </td>
+                                        <td #customUnit class="col-sm-1 col-md-1" style="text-align: left">
+                                            <span>{{ cartInfo.isCustomUnit }}</span>
+                                        </td>
 
-                                    <td class="col-sm-1 col-md-1" style="text-align: left" *ngIf="cartInfo.isCustomUnit=='' ; customUnit">
-                                        <span>{{ productInfos[i].unit }}</span>
-                                    </td>
-                                    <td #customUnit class="col-sm-1 col-md-1" style="text-align: left">
-                                        <span>{{ cartInfo.isCustomUnit }}</span>
-                                    </td>
-
-                                    <td class="col-sm-1 col-md-1">
-                                        <button type="button" class="btn btn-danger cartRemove">
+                                        <td class="col-sm-1 col-md-1">
+                                            <button type="button" class="btn btn-danger cartRemove">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row m-t">
-                        <div class="col-md-4 col-md-offset-8">
-                            <table class="table table-striped text-right">
-                                <tbody>
-                                    <tr>
-
-                                        <td>
-                                            <label for=""><strong>Total (Inc Delivery Fee) :</strong></label>
-                                            <input type="number" class="form-control totalFinal" id="" pattern="\d*">
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+
+                        <div class="row m-t">
+                            <div class="col-md-4 col-md-offset-8">
+                                <table class="table table-striped text-right">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <mat-form-field class="full-width" [dividerColor]="warn">
+                                                    <input matInput type="number" placeholder="Total (Inc Delivery Fee) :" ngModel name="totalFinal" id="totalFinal" required>
+                                                </mat-form-field>
+                                                <mat-error *ngIf="!f.valid && f.touched">
+                                                    Valid total amount <strong>required</strong>
+                                                </mat-error>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div style="padding:0px 15px 0px 25px;" class="text-right">
+                                <button mat-raised-button color="warn" [disabled]="!f.valid">Mark as Delivered</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
         </div>
     </div>
-    <div style="padding-bottom:25px;">
-        <button type="button" id="" class="btn btn-warning btn-lg setStatus">Mark as Delivered</button>
-    </div>
+
 </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
-
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Component, Inject, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 import { ProcessingModalService } from '../../../../server/processing-table/processing-modal.service';
 
@@ -70,12 +70,21 @@ export class ProcessingModalComponent implements OnInit {
       this.deliveryType = this.orderInfo.delivery_method;
       this.store = this.orderInfo.store;
 
-      console.log(this.responseData);
-
     }, (err) => {
       // do something if error
     });
   }
 
+  markDelivered(form: NgForm) {
+    this.dialogRef.close();
+  }
+
+  removeFromCart() {
+
+  }
+
+  editCartAmount () {
+
+  }
 
 }

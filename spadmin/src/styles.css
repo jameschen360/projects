@@ -41,11 +41,6 @@ section {
   border-top: 1px solid #ddd;
 }
 
-input {
-  display: none;
-}
-
-
 /* Toastr custom styles*/
 #toast-container {
 }
@@ -3009,14 +3004,7 @@ h6 {
 .normalheader h2 {
   margin-top: 0px;
 }
-.input-xs {
-  height: 20px;
-  padding: 2px 10px;
-  font-size: 10px;
-  line-height: 1.5;
-  border-radius: 3px;
-  font-weight: 500;
-}
+
 .clip-header i {
   display: inline-block;
   -webkit-transform: rotate(45deg);
@@ -3067,10 +3055,7 @@ h6 {
   padding: 4px 8px !important;
   font-size: 17px !important;
 }
-.input-group-addon {
-  background: #fafbfc;
-  border-color: #e4e5e7 !important;
-}
+
 .sidebar-button {
   padding: 4px 10px 0 10px;
 }
@@ -4574,54 +4559,6 @@ a.cartButton.active {
   color: white;
   cursor: pointer;
   background-color: transparent;
-}
-
-.input-group {
-  width: 100%;
-  font-size: 16px;
-  max-width: 400px;
-  padding-top: 20px;
-  position: relative;
-  margin-bottom: 15px;
-}
-.input-group input {
-  width: 100%;
-  color: black;
-  border: none;
-  outline: none;
-  padding: 5px 0;
-  line-height: 1;
-  font-size: 16px;
-  font-family: 'Raleway';
-  border-bottom: solid 1px #ECA242;
-  background-color: transparent;
-  -webkit-transition: box-shadow 0.2s ease-in;
-  -moz-transition: box-shadow 0.2s ease-in;
-  -ms-transition: box-shadow 0.2s ease-in;
-  -o-transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in;
-}
-.input-group input + label {
-  left: 0;
-  top: 20px;
-  position: absolute;
-  pointer-events: none;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-.input-group input:focus {
-  box-shadow: 0 1px 0 0 white;
-}
-.input-group input:focus + label, .input-group input.active + label {
-  font-size: 12px;
-  -webkit-transform: translateY(-20px);
-  -moz-transform: translateY(-20px);
-  -ms-transform: translateY(-20px);
-  -o-transform: translateY(-20px);
-  transform: translateY(-20px);
 }
 
 .codepen-by {
