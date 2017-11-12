@@ -22,9 +22,8 @@
                         <span style="padding-bottom:25px;" id="storeName"><h4 class="col-sm-4" style="text-align:center;">Store: {{ store | uppercase }}</h4></span>
 
                     </div>
-                    <form (ngSubmit)="markDelivered(f)" #f="ngForm">
+                    <form [formGroup]="cartForm" (ngSubmit)="markDelivered()">
                         <div class="table-responsive m-t">
-
                             <table class="table table-striped" id="processingOrderTableDetail">
                                 <thead>
                                     <tr>
@@ -35,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr id="cart_{{ cartInfo.id }} " class="cartItem" *ngFor="let cartInfo of cartInfos; let i = index">
+                                    <tr id="cart_{{ cartInfo.id }}" #cartID class="cartItem" *ngFor="let cartInfo of cartInfos; let i = index">
                                         <td class="col-sm-8 col-md-6">
                                             <div class="media-body" *ngIf="cartInfo.isCustom=='0'">
                                                 <h4 class="media-heading pull-left">{{ productInfos[i].product_name }}</h4>
@@ -49,7 +48,7 @@
                                         </td>
                                         <td class="col-sm-1 col-md-1" style="text-align: center">
                                             <mat-form-field>
-                                                <input type="number" matInput placeholder="" value="{{cartInfo.amount}}">
+                                                <input type="number" #amount matInput placeholder="" value="{{cartInfo.amount}}" (change)="editCartAmount(amount, cartID)">
                                             </mat-form-field>
                                         </td>
 
@@ -77,9 +76,10 @@
                                         <tr>
                                             <td>
                                                 <mat-form-field class="full-width" [dividerColor]="warn">
-                                                    <input matInput type="number" placeholder="Total (Inc Delivery Fee) :" ngModel name="totalFinal" id="totalFinal" required>
+                                                    <input matInput type="number" placeholder="Total (Inc Delivery Fee) :" formControlName="totalFinal">
                                                 </mat-form-field>
-                                                <mat-error *ngIf="!f.valid && f.touched">
+                                                <mat-error 
+                                                    *ngIf="!cartForm.get('totalFinal').valid && cartForm.get('totalFinal').touched">
                                                     Valid total amount <strong>required</strong>
                                                 </mat-error>
                                             </td>
@@ -89,7 +89,7 @@
                             </div>
 
                             <div style="padding:0px 15px 0px 25px;" class="text-right">
-                                <button mat-raised-button color="warn" [disabled]="!f.valid">Mark as Delivered</button>
+                                <button mat-raised-button color="warn" [disabled]="!cartForm.get('totalFinal').valid">Mark as Delivered</button>
                             </div>
                         </div>
                     </form>

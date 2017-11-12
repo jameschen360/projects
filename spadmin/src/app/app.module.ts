@@ -1,8 +1,10 @@
+import { ProcessingAmountChangeService } from './server/processing-table/processing-amount-change.service';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginService } from './server/login.service';
 import { ProcessingModalService } from './server/processing-table/processing-modal.service';
 import { ProcessingTableService } from './server/processing-table/processing-table.service';
+import { ToastrOptions } from './shared/toastr-options';
 
 @NgModule({
   declarations: [
@@ -49,18 +52,21 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     BusyLoaderModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ToastModule.forRoot()
   ],
   entryComponents: [
     ProcessingModalComponent
   ],
   providers: [
+    ToastrOptions,
     LoginService,
     AuthGuard,
     AuthPreventLoginPage,
     AuthLogout,
     ProcessingTableService,
-    ProcessingModalService
+    ProcessingModalService,
+    ProcessingAmountChangeService,
   ],
   bootstrap: [AppComponent]
 })

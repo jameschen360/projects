@@ -1,6 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, Inject, OnInit, ViewContainerRef } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastrOptions } from '../../../../shared/toastr-options';
 
 import { ProcessingModalService } from '../../../../server/processing-table/processing-modal.service';
 
@@ -10,6 +12,8 @@ import { ProcessingModalService } from '../../../../server/processing-table/proc
   styleUrls: ['./processing-modal.component.css']
 })
 export class ProcessingModalComponent implements OnInit {
+  cartForm: FormGroup;
+
   public responseData: any;
   public userDetails: any;
   public token: string;
@@ -17,6 +21,13 @@ export class ProcessingModalComponent implements OnInit {
   processingModalPostData = {
     'id': '',
     'processing_order_id': '',
+    'token': ''
+  };
+
+  processingAmountChangeData = {
+    'id': '',
+    'cart_id': '',
+    'amount': '',
     'token': ''
   };
   // order response parameters
@@ -35,7 +46,11 @@ export class ProcessingModalComponent implements OnInit {
   store: string;
 
   constructor(public dialogRef: MatDialogRef<ProcessingModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    public getData: ProcessingModalService) {
+    public getData: ProcessingModalService,
+    public toastr: ToastsManager, vcr: ViewContainerRef,
+    public toastrOptions: ToastrOptions) {
+
+    this.toastr.setRootViewContainerRef(vcr);
 
     const userData = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = userData.userData;
@@ -51,6 +66,12 @@ export class ProcessingModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cartForm = new FormGroup({
+      'totalFinal': new FormControl(null, [Validators.required])
+    });
+    // this.cartForm.valueChanges.subscribe(
+    //   (value) => console.log(value)
+    // );
   }
 
   getProcessingTable() {
@@ -76,15 +97,27 @@ export class ProcessingModalComponent implements OnInit {
   }
 
   markDelivered(form: NgForm) {
-    this.dialogRef.close();
+    // this.dialogRef.close();
+    console.log(this.cartForm);
   }
 
   removeFromCart() {
 
   }
 
-  editCartAmount () {
+  editCartAmount(amount, cartID) {
+    cartID = cartID.id.split('_')[1];
+    amount = amount.value;
+    this.processingAmountChangeData.amount = amount;
+    this.processingAmountChangeData.cart_id = cartID;
+    this.processingAmountChangeData.id = this.userDetails.id;
+    this.processingAmountChangeData.token = this.token;
 
+    if (amount <= 0) {
+      this.toastr.error('This is not good!', 'Oops!');
+    } else {
+      // send to http
+    }
   }
 
 }
