@@ -114,7 +114,7 @@ export class ProcessingModalComponent implements OnInit {
     this.processingAmountChangeData.token = this.token;
 
     if (amount <= 0) {
-      this.toastr.error('This is not good!', 'Oops!');
+      this.toastr.error('This is not good!', 'Oopssds!');
     } else {
       // send to http
     }
