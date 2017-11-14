@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,7 @@ import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
 import { BusyLoaderModule } from './busy-loader.module';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { DeliveredModalComponent } from './home/tables/delivered-table/delivered-modal/delivered-modal.component';
 import { DeliveredTableComponent } from './home/tables/delivered-table/delivered-table.component';
 import { MaitTableComponent } from './home/tables/mait-table/mait-table.component';
 import { ProcessingModalComponent } from './home/tables/processing-table/processing-modal/processing-modal.component';
@@ -22,8 +23,8 @@ import { UserTableComponent } from './home/tables/user-table/user-table.componen
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DeliveredTableService } from './server/delivered-table/delivered-table.service';
 import { LoginService } from './server/login.service';
-import { ProcessingAmountChangeService } from './server/processing-table/processing-amount-change.service';
 import { ProcessingModalService } from './server/processing-table/processing-modal.service';
 import { ProcessingTableService } from './server/processing-table/processing-table.service';
 
@@ -40,7 +41,8 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     DeliveredTableComponent,
     UserTableComponent,
     MaitTableComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    DeliveredModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     MaterialModule
   ],
   entryComponents: [
-    ProcessingModalComponent
+    ProcessingModalComponent,
+    DeliveredModalComponent
   ],
   providers: [
     LoginService,
@@ -62,7 +65,7 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     AuthLogout,
     ProcessingTableService,
     ProcessingModalService,
-    ProcessingAmountChangeService,
+    DeliveredTableService
   ],
   bootstrap: [AppComponent]
 })
