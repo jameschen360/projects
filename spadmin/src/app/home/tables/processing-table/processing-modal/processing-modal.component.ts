@@ -1,10 +1,12 @@
 import { Component, Inject, OnInit, ViewContainerRef } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { ToastrOptions } from '../../../../shared/toastr-options';
-
 import { ProcessingModalService } from '../../../../server/processing-table/processing-modal.service';
+import { MatSnackBar } from '@angular/material';
+// ES6 Modules or TypeScript
+import swal from 'sweetalert2';
+
+declare var $;
 
 @Component({
   selector: 'app-processing-modal',
@@ -13,7 +15,6 @@ import { ProcessingModalService } from '../../../../server/processing-table/proc
 })
 export class ProcessingModalComponent implements OnInit {
   cartForm: FormGroup;
-
   public responseData: any;
   public userDetails: any;
   public token: string;
@@ -23,12 +24,17 @@ export class ProcessingModalComponent implements OnInit {
     'processing_order_id': '',
     'token': ''
   };
-
-  processingAmountChangeData = {
+  processingRemoveData = {
     'id': '',
     'cart_id': '',
-    'amount': '',
-    'token': ''
+    'token': '',
+    'order_id': ''
+  };
+  markAsDeliveredData = {
+    'id': '',
+    'token': '',
+    'order_id': '',
+    'totalAmount': ''
   };
   // order response parameters
   userInfo: any;
@@ -46,11 +52,7 @@ export class ProcessingModalComponent implements OnInit {
   store: string;
 
   constructor(public dialogRef: MatDialogRef<ProcessingModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    public getData: ProcessingModalService,
-    public toastr: ToastsManager, vcr: ViewContainerRef,
-    public toastrOptions: ToastrOptions) {
-
-    this.toastr.setRootViewContainerRef(vcr);
+    public getData: ProcessingModalService, public snackBar: MatSnackBar) {
 
     const userData = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = userData.userData;
@@ -58,7 +60,6 @@ export class ProcessingModalComponent implements OnInit {
     this.processingModalPostData.id = this.userDetails.id;
     this.processingModalPostData.token = this.token;
     this.processingModalPostData.processing_order_id = this.data.orderID;
-    this.getProcessingTable();
   }
 
   onNoClick(): void {
@@ -67,14 +68,9 @@ export class ProcessingModalComponent implements OnInit {
 
   ngOnInit() {
     this.cartForm = new FormGroup({
-      'totalFinal': new FormControl(null, [Validators.required])
+      'totalFinal': new FormControl(null, [Validators.required]),
+      'amount': new FormArray([])
     });
-    // this.cartForm.valueChanges.subscribe(
-    //   (value) => console.log(value)
-    // );
-  }
-
-  getProcessingTable() {
     this.processingModalBusy = this.getData.postData(this.processingModalPostData, 'processingModal').then((result) => {
       this.responseData = result;
       this.userInfo = this.responseData.userInfo;
@@ -90,34 +86,101 @@ export class ProcessingModalComponent implements OnInit {
       this.orderTime = this.orderInfo.order_time;
       this.deliveryType = this.orderInfo.delivery_method;
       this.store = this.orderInfo.store;
-
     }, (err) => {
       // do something if error
     });
   }
 
-  markDelivered(form: NgForm) {
-    // this.dialogRef.close();
-    console.log(this.cartForm);
+
+  markDelivered() {
+    this.markAsDeliveredData.id = this.userDetails.id;
+    this.markAsDeliveredData.order_id = this.data.orderID;
+    this.markAsDeliveredData.token = this.token;
+    this.markAsDeliveredData.totalAmount = this.cartForm.value.totalFinal;
+
+    $('#markDelivered').html('Processing...<span class="fa fa-spinner fa-spin"></span>').prop('disabled', true);
+    swal({
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      title: 'Are you sure you want mark this a delivered?',
+      html: 'You cannot undo this action!',
+      type: 'question',
+      showCancelButton: true,
+      showLoaderOnConfirm: true,
+      confirmButtonColor: '#ffb606',
+      cancelButtonColor: '#e87164',
+      confirmButtonText: 'Yes!'
+
+      }).then(() => {
+        this.processingModalBusy = this.getData.postData(this.markAsDeliveredData, 'markAsDelivered').then((result) => {
+          this.responseData = result;
+
+          const table = $('#processingTable').DataTable();
+          this.dialogRef.close();
+          table
+          .row( $('#orderNumber_' + this.data.orderID).parents('tr') )
+          .remove()
+          .draw();
+
+          this.snackBar.open('Email has been sent to Customer', 'Close', {
+            duration: 2000,
+          });
+
+        }, (err) => {
+            // show some error
+            console.log(err);
+        });
+      }, (dismiss) => {if ( dismiss === 'cancel') {
+        $('#markDelivered').html('Mark as Delivered').prop('disabled', false);
+      }});
+
   }
 
-  removeFromCart() {
 
-  }
-
-  editCartAmount(amount, cartID) {
+  removeFromCart(cartID) {
     cartID = cartID.id.split('_')[1];
-    amount = amount.value;
-    this.processingAmountChangeData.amount = amount;
-    this.processingAmountChangeData.cart_id = cartID;
-    this.processingAmountChangeData.id = this.userDetails.id;
-    this.processingAmountChangeData.token = this.token;
+    this.processingRemoveData.cart_id = cartID;
+    this.processingRemoveData.id = this.userDetails.id;
+    this.processingRemoveData.token = this.token;
+    this.processingRemoveData.order_id = this.data.orderID;
+    $('#remove_' + cartID).html('<span class="fa fa-spinner fa-spin"></span>').prop('disabled', true);
+    swal({
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      title: 'Are you sure you want to delete this item?',
+      html: 'You cannot undo this action!',
+      type: 'question',
+      showCancelButton: true,
+      showLoaderOnConfirm: true,
+      confirmButtonColor: '#ffb606',
+      cancelButtonColor: '#e87164',
+      confirmButtonText: 'Yes!'
 
-    if (amount <= 0) {
-      this.toastr.error('This is not good!', 'Oops!');
-    } else {
-      // send to http
-    }
+      }).then(() => {
+        this.getData.postData(this.processingRemoveData, 'processingRemove').then((result) => {
+          this.responseData = result;
+          const message = this.responseData.msg;
+          if (message === 'error') {
+            this.snackBar.open('You cannot delete this', 'Close', {
+              duration: 2000,
+            });
+            $('#remove_' + cartID).html('<span class="glyphicon glyphicon-remove"></span>').prop('disabled', false);
+          } else {
+            this.snackBar.open('You have deleted it!', 'Close', {
+              duration: 2000,
+            });
+            $('#cart_' + cartID).remove();
+          }
+        }, (err) => {
+            // show some error
+        });
+      }, (dismiss) => {if ( dismiss === 'cancel') {
+        $('#remove_' + cartID).html('<span class="glyphicon glyphicon-remove"></span>').prop('disabled', false);
+      }});
+
+
   }
 
 }

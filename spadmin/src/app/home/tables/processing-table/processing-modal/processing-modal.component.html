@@ -47,9 +47,7 @@
                                             </div>
                                         </td>
                                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                                            <mat-form-field>
-                                                <input type="number" #amount matInput placeholder="" value="{{cartInfo.amount}}" (change)="editCartAmount(amount, cartID)">
-                                            </mat-form-field>
+                                            <span>{{ cartInfo.amount }}</span>
                                         </td>
 
                                         <td class="col-sm-1 col-md-1" style="text-align: left" *ngIf="cartInfo.isCustomUnit=='' ; customUnit">
@@ -60,7 +58,7 @@
                                         </td>
 
                                         <td class="col-sm-1 col-md-1">
-                                            <button type="button" class="btn btn-danger cartRemove">
+                                            <button type="button" class="btn btn-danger cartRemove" id="remove_{{ cartInfo.id }}" (click)="removeFromCart(cartID)" [disabled]="removeButtonDisabled">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
                                         </td>
@@ -89,7 +87,7 @@
                             </div>
 
                             <div style="padding:0px 15px 0px 25px;" class="text-right">
-                                <button mat-raised-button color="warn" [disabled]="!cartForm.get('totalFinal').valid">Mark as Delivered</button>
+                                <button mat-raised-button color="warn" [disabled]="!cartForm.valid" id="markDelivered">Mark as Delivered</button>
                             </div>
                         </div>
                     </form>
