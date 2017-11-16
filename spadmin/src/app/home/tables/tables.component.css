@@ -74,6 +74,7 @@
   margin-top:-1px;
 }
 
-/deep/ .mat-dialog-container {
+/deep/ mat-dialog-container {
   max-height: 80vh !important;
+  border-radius: 20px !important;
 }

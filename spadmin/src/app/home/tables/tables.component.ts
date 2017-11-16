@@ -13,7 +13,7 @@ export class TablesComponent implements OnInit {
   activeLinkIndex = 0;
   selectedIndex = 0;
 
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location) {
+  constructor(public router: Router, public route: ActivatedRoute, public location: Location) {
     this.routeLinks = [
       { label: 'Processing Orders', link: 'processingTable', icon: 'fa-edit', cssStyle: 'icon-style-edit' },
       { label: 'Delivered Orders', link: 'deliveredTable', icon: 'fa-check', cssStyle: 'icon-style-check' },

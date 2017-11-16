@@ -19,17 +19,18 @@ export class ProcessingTableComponent implements OnInit {
   public responseData;
   public token: string;
   processingTablePostData = {
-    'id': '',
+    'user_id': '',
     'token': ''
   };
-  processingOrderBusy: Promise<any>;
   order;
+  processingOrderData;
+  public loading = false;
 
   constructor(public getData: ProcessingTableService, public dialog: MatDialog) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
     this.token = data.token;
-    this.processingTablePostData.id = this.userDetails.id;
+    this.processingTablePostData.user_id = this.userDetails.id;
     this.processingTablePostData.token = this.token;
     this.getProcessingTable();
   }
@@ -39,13 +40,16 @@ export class ProcessingTableComponent implements OnInit {
   }
 
   getProcessingTable() {
-    this.processingOrderBusy = this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
+    this.loading = true;
+    this.getData.postData(this.processingTablePostData, 'processingTable').then((result) => {
       this.responseData = result;
+      this.processingOrderData = this.responseData.processingOrderData;
       $(function () {
         $('#processingTable').DataTable({
           responsive: true
         });
       });
+      this.loading = false;
     }, (err) => {
     });
   }

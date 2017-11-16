@@ -8,8 +8,8 @@ import { LoginService } from '../server/login.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private authService: LoginService,
-        private router: Router) {
+    constructor(public authService: LoginService,
+        public router: Router) {
 
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

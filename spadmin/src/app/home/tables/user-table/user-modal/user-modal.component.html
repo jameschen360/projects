@@ -1,0 +1,18 @@
+
+    <h2 class="modal-title text-center" id="userID" style="padding-top:50px; ">{{fname}} {{lname}}</h2>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    
+    <div class="row">
+        <div class="text-center">
+            <h4>
+                <address>
+                    <span id="userAddressInfo">{{address}} {{pcode}}</span><br>
+                    <span id="userEmailInfo">{{email}}</span><br>
+                    <span id="userPhoneInfo">{{phone}}</span><br>
+                </address>
+            </h4>
+        </div>
+    </div>
+    <div style="padding-bottom:25px;" class="text-center">
+        <button mat-raised-button color="warn" (click)="closeUserModal()">Close</button>
+    </div>

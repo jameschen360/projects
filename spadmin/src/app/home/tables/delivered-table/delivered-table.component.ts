@@ -20,17 +20,18 @@ export class DeliveredTableComponent implements OnInit {
   public deliveredResult;
   public token: string;
   deliveredTablePostData = {
-    'id': '',
+    'user_id': '',
     'token': ''
   };
-  deliveredOrderBusy: Promise<any>;
   order;
+
+  public loading = false;
 
   constructor(public getData: DeliveredTableService, public dialog: MatDialog) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
     this.token = data.token;
-    this.deliveredTablePostData.id = this.userDetails.id;
+    this.deliveredTablePostData.user_id = this.userDetails.id;
     this.deliveredTablePostData.token = this.token;
     this.getDeliveredTable();
   }
@@ -40,7 +41,8 @@ export class DeliveredTableComponent implements OnInit {
   }
 
   getDeliveredTable() {
-    this.deliveredOrderBusy = this.getData.postData(this.deliveredTablePostData, 'deliveredTable').then((result) => {
+    this.loading = true;
+    this.getData.postData(this.deliveredTablePostData, 'deliveredTable').then((result) => {
       this.responseData = result;
       this.deliveredResult = this.responseData.deliveredOrderData;
       $(function () {
@@ -48,6 +50,7 @@ export class DeliveredTableComponent implements OnInit {
           responsive: true
         });
       });
+      this.loading = false;
     }, (err) => {
     });
   }

@@ -18,20 +18,19 @@ export class ProcessingModalComponent implements OnInit {
   public responseData: any;
   public userDetails: any;
   public token: string;
-  processingModalBusy: Promise<any>;
   processingModalPostData = {
-    'id': '',
+    'user_id': '',
     'processing_order_id': '',
     'token': ''
   };
   processingRemoveData = {
-    'id': '',
+    'user_id': '',
     'cart_id': '',
     'token': '',
     'order_id': ''
   };
   markAsDeliveredData = {
-    'id': '',
+    'user_id': '',
     'token': '',
     'order_id': '',
     'totalAmount': ''
@@ -50,6 +49,7 @@ export class ProcessingModalComponent implements OnInit {
   orderTime: string;
   deliveryType: string;
   store: string;
+  public loading = false;
 
   constructor(public dialogRef: MatDialogRef<ProcessingModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
     public getData: ProcessingModalService, public snackBar: MatSnackBar) {
@@ -57,7 +57,7 @@ export class ProcessingModalComponent implements OnInit {
     const userData = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = userData.userData;
     this.token = userData.token;
-    this.processingModalPostData.id = this.userDetails.id;
+    this.processingModalPostData.user_id = this.userDetails.id;
     this.processingModalPostData.token = this.token;
     this.processingModalPostData.processing_order_id = this.data.orderID;
   }
@@ -67,11 +67,12 @@ export class ProcessingModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.cartForm = new FormGroup({
       'totalFinal': new FormControl(null, [Validators.required]),
       'amount': new FormArray([])
     });
-    this.processingModalBusy = this.getData.postData(this.processingModalPostData, 'processingModal').then((result) => {
+      this.getData.postData(this.processingModalPostData, 'processingModal').then((result) => {
       this.responseData = result;
       this.userInfo = this.responseData.userInfo;
       this.cartInfos = this.responseData.cartData;
@@ -86,6 +87,7 @@ export class ProcessingModalComponent implements OnInit {
       this.orderTime = this.orderInfo.order_time;
       this.deliveryType = this.orderInfo.delivery_method;
       this.store = this.orderInfo.store;
+      this.loading = false;
     }, (err) => {
       // do something if error
     });
@@ -93,7 +95,7 @@ export class ProcessingModalComponent implements OnInit {
 
 
   markDelivered() {
-    this.markAsDeliveredData.id = this.userDetails.id;
+    this.markAsDeliveredData.user_id = this.userDetails.id;
     this.markAsDeliveredData.order_id = this.data.orderID;
     this.markAsDeliveredData.token = this.token;
     this.markAsDeliveredData.totalAmount = this.cartForm.value.totalFinal;
@@ -113,7 +115,8 @@ export class ProcessingModalComponent implements OnInit {
       confirmButtonText: 'Yes!'
 
       }).then(() => {
-        this.processingModalBusy = this.getData.postData(this.markAsDeliveredData, 'markAsDelivered').then((result) => {
+        this.loading = true;
+        this.getData.postData(this.markAsDeliveredData, 'markAsDelivered').then((result) => {
           this.responseData = result;
 
           const table = $('#processingTable').DataTable();
@@ -126,7 +129,7 @@ export class ProcessingModalComponent implements OnInit {
           this.snackBar.open('Email has been sent to Customer', 'Close', {
             duration: 2000,
           });
-
+          this.loading = false;
         }, (err) => {
             // show some error
             console.log(err);
@@ -141,7 +144,7 @@ export class ProcessingModalComponent implements OnInit {
   removeFromCart(cartID) {
     cartID = cartID.id.split('_')[1];
     this.processingRemoveData.cart_id = cartID;
-    this.processingRemoveData.id = this.userDetails.id;
+    this.processingRemoveData.user_id = this.userDetails.id;
     this.processingRemoveData.token = this.token;
     this.processingRemoveData.order_id = this.data.orderID;
     $('#remove_' + cartID).html('<span class="fa fa-spinner fa-spin"></span>').prop('disabled', true);
@@ -159,6 +162,7 @@ export class ProcessingModalComponent implements OnInit {
       confirmButtonText: 'Yes!'
 
       }).then(() => {
+        this.loading = true;
         this.getData.postData(this.processingRemoveData, 'processingRemove').then((result) => {
           this.responseData = result;
           const message = this.responseData.msg;
@@ -173,6 +177,7 @@ export class ProcessingModalComponent implements OnInit {
             });
             $('#cart_' + cartID).remove();
           }
+          this.loading = false;
         }, (err) => {
             // show some error
         });

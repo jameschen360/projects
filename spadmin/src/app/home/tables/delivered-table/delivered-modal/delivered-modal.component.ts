@@ -18,9 +18,8 @@ export class DeliveredModalComponent implements OnInit {
   public responseData: any;
   public userDetails: any;
   public token: string;
-  deliveredModalBusy: Promise<any>;
   deliveredModalPostData = {
-    'id': '',
+    'user_id': '',
     'order_id': '',
     'token': ''
   };
@@ -42,13 +41,15 @@ export class DeliveredModalComponent implements OnInit {
   totalAmount: string;
   deliveredTime: string;
 
+  public loading = false;
+
   constructor(public dialogRef: MatDialogRef<DeliveredModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
     public getData: DeliveredTableService, public snackBar: MatSnackBar) {
 
     const userData = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = userData.userData;
     this.token = userData.token;
-    this.deliveredModalPostData.id = this.userDetails.id;
+    this.deliveredModalPostData.user_id = this.userDetails.id;
     this.deliveredModalPostData.token = this.token;
     this.deliveredModalPostData.order_id = this.data.orderID;
   }
@@ -58,11 +59,12 @@ export class DeliveredModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.cartForm = new FormGroup({
       'totalFinal': new FormControl(null, [Validators.required]),
       'amount': new FormArray([])
     });
-    this.deliveredModalBusy = this.getData.postData(this.deliveredModalPostData, 'deliveredModal').then((result) => {
+      this.getData.postData(this.deliveredModalPostData, 'deliveredModal').then((result) => {
       this.responseData = result;
       this.userInfo = this.responseData.userInfo;
       this.cartInfos = this.responseData.cartData;
@@ -79,6 +81,8 @@ export class DeliveredModalComponent implements OnInit {
       this.store = this.orderInfo.store;
       this.totalAmount = this.orderInfo.totalAmount;
       this.deliveredTime = this.orderInfo.deliveredTime;
+
+      this.loading = false;
     }, (err) => {
       // do something if error
     });

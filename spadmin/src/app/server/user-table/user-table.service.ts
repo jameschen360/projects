@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 @Injectable()
-export class ProcessingTableService {
-  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/processing/';
+export class UserTableService {
+  loginAPIURI = 'https://springbankdelivery.com/portal/angularServices/users/';
 
   constructor(public http: Http,
               public router: Router) { }

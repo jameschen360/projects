@@ -8,7 +8,7 @@ import { AuthLogout } from '../../auth/auth-logout';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authLogout: AuthLogout) { }
+  constructor(public authLogout: AuthLogout) { }
 
   ngOnInit() {
   }

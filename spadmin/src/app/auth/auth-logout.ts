@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
 @Injectable()
 export class AuthLogout {
 
-    constructor (private router: Router) {
+    constructor (public router: Router) {
 
     }
 

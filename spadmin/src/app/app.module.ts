@@ -1,3 +1,4 @@
+import { UserTableService } from './server/user-table/user-table.service';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -9,7 +10,6 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthLogout } from './auth/auth-logout';
 import { AuthPreventLoginPage } from './auth/auth-prevent-login-page.services';
-import { BusyLoaderModule } from './busy-loader.module';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DeliveredModalComponent } from './home/tables/delivered-table/delivered-modal/delivered-modal.component';
@@ -27,6 +27,8 @@ import { DeliveredTableService } from './server/delivered-table/delivered-table.
 import { LoginService } from './server/login.service';
 import { ProcessingModalService } from './server/processing-table/processing-modal.service';
 import { ProcessingTableService } from './server/processing-table/processing-table.service';
+import { UserModalComponent } from './home/tables/user-table/user-modal/user-modal.component';
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -43,20 +45,22 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     MaitTableComponent,
     ProductTableComponent,
     DeliveredModalComponent,
+    UserModalComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    BusyLoaderModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    LoadingModule
   ],
   entryComponents: [
     ProcessingModalComponent,
-    DeliveredModalComponent
+    DeliveredModalComponent,
+    UserModalComponent
   ],
   providers: [
     LoginService,
@@ -65,7 +69,8 @@ import { ProcessingTableService } from './server/processing-table/processing-tab
     AuthLogout,
     ProcessingTableService,
     ProcessingModalService,
-    DeliveredTableService
+    DeliveredTableService,
+    UserTableService
   ],
   bootstrap: [AppComponent]
 })

@@ -25,9 +25,11 @@ export class LoginComponent implements OnInit {
 
   authenticated = false;
 
-  constructor(private authService: LoginService,
-    private router: Router,
-    private route: ActivatedRoute) {
+  public loading = false;
+
+  constructor(public authService: LoginService,
+    public router: Router,
+    public route: ActivatedRoute) {
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
     }
 
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSignin(form: NgForm) {
+    this.loading = true;
     this.loginData.username = form.value.username;
     this.loginData.password = form.value.password;
 
@@ -42,8 +45,10 @@ export class LoginComponent implements OnInit {
       this.authService.postData(this.loginData, 'login').then((result) => {
         this.responseData = result;
         if (this.responseData.userData === false) {
+          this.loading = false;
           this.errorLoginMsg = true;
         } else {
+          this.loading = false;
           this.errorLoginMsg = false;
           this.router.navigateByUrl(this.returnUrl);
         }
